@@ -18,3 +18,7 @@ Process for creating articles feature test and features
   - create article
     - Article as been created
     - Article path
+
+  -Completing view for new article
+  -Creating article model
+  -Bootstrap
