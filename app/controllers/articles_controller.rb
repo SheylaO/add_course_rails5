@@ -13,7 +13,6 @@ class ArticlesController < ApplicationController
       redirect_to articles_path
     else
       flash.now[:danger] = "Article has not been created"
-      article-validation
       render :new
     end
   end
