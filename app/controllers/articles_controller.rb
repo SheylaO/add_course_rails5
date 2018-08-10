@@ -7,12 +7,21 @@ class ArticlesController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
    @article = Article.new(article_params)
     if  @article.save
       flash[:success] = "Article has been created"
       redirect_to articles_path
     else
       flash[:danger] = "Article has not been created"
+=======
+    @article = Article.new(article_params)
+    if @article.save
+      flash[:success] = "Article has been created"
+      redirect_to articles_path
+    else
+      flash.now[:danger] = "Article has not been created"
+>>>>>>> article-validation
       render :new
     end
   end
