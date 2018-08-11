@@ -1,18 +1,23 @@
 <article class="detail-article">
-	<h1 class="article-detail-title"><%= @article.title %></h1>
 
-	<div class="glyphicon glyphicon-calendar" id="article-date">
-		<%= @article.created_at.strftime("%b %d %Y") %>
-	</div>
+<div class="card text-white bg-info mb-3" >
+  <div class="card-header">
+  	 <h1 class="article-detail-title"><%= @article.title %></h1>
+  </div>
 
-
-	<div class="article-body">
-		<%= @article.body %>
-	</div>
-
+  <div class="card-body">
+    	<h5 class="card-title">
+    		<div class="article-body"><%= @article.body %></div>
+		</h5>
+    	<p class="card-text">
+    		<div class="glyphicon glyphicon-calendar" id="article-date">
+			<%= @article.created_at.strftime("%b %d %Y") %>
+			</div>
+		</p>
+  </div>
+</div>
 
 </article>
-
 
 
 
