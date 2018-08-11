@@ -1,9 +1,9 @@
-Listing articles
+Show articles
 
 -Create branch
--Create articles to display
+-Create 1 article to display
 
--List the 2 articles
+-Show the article title and details 
 
 -Expect both article titles and bodies to be present
 
