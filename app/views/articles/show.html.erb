@@ -10,14 +10,19 @@
     		<div class="article-body"><%= @article.body %></div>
 		</h5>
     	<p class="card-text">
-    		<div class="glyphicon glyphicon-calendar" id="article-date">
+    		<div class="fa fa-calendar" id="article-date">
 			<%= @article.created_at.strftime("%b %d %Y") %>
 			</div>
 		</p>
   </div>
 </div>
 
-<%= link_to "Edit Article", edit_article_path(@article), class: "btn btn-primary btn-lg btn space" %>
+
+<button type="button" class="btn btn-light"><%= link_to "Edit Article", edit_article_path(@article)%></button>
+
+
+<button type="button" class="btn btn-light"><%= link_to "Delete Article", article_path(@article), method: :delete, 
+  data: { confirm: "Are you sure you want to delete article?"} %></button>
 
 </article>
 
