@@ -8,23 +8,30 @@
   <div class="card-body">
     	<h5 class="card-title">
     		<div class="article-body"><%= @article.body %></div>
-		</h5>
+		  </h5>
     	<p class="card-text">
-    		<div class="fa fa-calendar" id="article-date">
-			<%= @article.created_at.strftime("%b %d %Y") %>
+    		<div id="article-date">
+          <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Updated: <%= @article.updated_at.strftime("%b %d %Y") %>">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </button>
 			</div>
 		</p>
   </div>
 </div>
 
 
-<button type="button" class="btn btn-light"><%= link_to "Edit Article", edit_article_path(@article)%></button>
+<button type="button" class="btn btn-light"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= link_to "Edit Article", edit_article_path(@article)%></button>
 
 
-<button type="button" class="btn btn-light"><%= link_to "Delete Article", article_path(@article), method: :delete, 
+<button type="button" class="btn btn-light"><i class="fa fa-trash" aria-hidden="true"></i>
+<%= link_to "Delete Article", article_path(@article), method: :delete, 
   data: { confirm: "Are you sure you want to delete article?"} %></button>
 
 </article>
+
+<script>$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})</script>
 
 
 
