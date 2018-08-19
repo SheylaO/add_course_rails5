@@ -19,13 +19,14 @@
   </div>
 </div>
 
+  <% if user_signed_in? && current_user == @article.user %>
+    <button type="button" class="btn btn-light"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= link_to "Edit Article", edit_article_path(@article)%></button>
 
-<button type="button" class="btn btn-light"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= link_to "Edit Article", edit_article_path(@article)%></button>
 
-
-<button type="button" class="btn btn-light"><i class="fa fa-trash" aria-hidden="true"></i>
-<%= link_to "Delete Article", article_path(@article), method: :delete, 
-  data: { confirm: "Are you sure you want to delete article?"} %></button>
+    <button type="button" class="btn btn-light"><i class="fa fa-trash" aria-hidden="true"></i>
+    <%= link_to "Delete Article", article_path(@article), method: :delete, 
+      data: { confirm: "Are you sure you want to delete article?"} %></button>
+  <% end %>
 
 </article>
 
