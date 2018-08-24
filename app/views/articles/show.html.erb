@@ -33,7 +33,7 @@
 <hr>
 <div class='col-md-12'>
   
-  <%= form_for [@article, @comment],
+  <%= form_for [@article, @comment], remote: true, 
       :html => {class: "form-horizontal", role: "form"} do |f| %>
     <% if @comment.errors.any? %>
       <div class='card card-danger col-md-offset-1'>
@@ -59,7 +59,7 @@
         <%= f.label :body, 'New Comment' %>
       </div>
       <div class='col-md-10'>
-        <%= f.text_area :body, rows: 10, class: 'form-control', placeholder: 'Your comment' %>
+        <%= f.text_area :body, rows: 4, class: 'form-control', placeholder: 'Your comment' %>
       </div>
     </div>
 
@@ -78,6 +78,7 @@
   </header>
   <div class='col-md-10'>
     <% if @article.comments.any? %>
+      <div id="messages">
         <%persisted_comments(@comments).each do |comment| %>
           <div class='comment-body'>
           <%= comment.body %>
@@ -89,6 +90,7 @@
           </div>
           <hr>
         <% end %>
+      </div>
       <% else %>
       There are not comments to show.
     <% end %>
